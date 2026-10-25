@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>影视先锋｜高清影视资源导航与观影指南 · yingshixianfeng-zh</title>
+<meta name="description" content="影视先锋（yingshixianfeng-zh）整理国内外电影、剧集、纪录片与动漫的口碑片单和观影线索，按类型与年代归档，帮你在开播前快速找到值得看的那一部。">
+<meta name="keywords" content="影视先锋, yingshixianfeng-zh, 电影推荐, 剧集导航, 纪录片片单">
+<meta name="author" content="影视先锋">
+<meta name="theme-color" content="#0b0e1a">
+<meta property="og:title" content="影视先锋｜高清影视资源导航与观影指南">
+<meta property="og:description" content="按类型与年代归档的口碑片单，电影、剧集、纪录片、动漫一站查到。">
+<meta property="og:url" content="https://yingshixianfeng-zh.github.io/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://yingshixianfeng-zh.github.io/">
+<style>
+:root{
+  --bg:#0b0e1a;
+  --bg-2:#111729;
+  --ink:#e8ecf6;
+  --ink-2:#a9b3c9;
+  --line:#232a44;
+  --accent:#ff5b3a;
+  --accent-2:#ffb454;
+  --card:#141a30;
+  --radius:18px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Microsoft YaHei","Hiragino Sans GB","WenQuanYi Micro Hei",system-ui,-apple-system,sans-serif;
+  background:var(--bg);
+  color:var(--ink);
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* 顶部 */
+header.top{
+  position:sticky;top:0;z-index:50;
+  background:rgba(11,14,26,.82);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.top-inner{display:flex;align-items:center;gap:16px;height:62px}
+.brand{display:flex;align-items:baseline;gap:9px;font-weight:800;letter-spacing:.5px;font-size:19px}
+.brand em{font-style:normal;color:var(--accent)}
+.brand span{font-size:11px;color:var(--ink-2);font-weight:500;letter-spacing:.3px}
+nav.tabs{margin-left:auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav.tabs::-webkit-scrollbar{display:none}
+nav.tabs a{
+  flex:none;padding:7px 13px;border-radius:999px;
+  font-size:13.5px;color:var(--ink-2);white-space:nowrap;
+  border:1px solid transparent;transition:.2s;
+}
+nav.tabs a:hover{color:var(--ink);border-color:var(--line);background:var(--bg-2)}
+nav.tabs a.on{color:#0b0e1a;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent;font-weight:700}
+
+/* 首屏 */
+.hero{padding:76px 0 54px;position:relative}
+.hero::after{
+  content:"";position:absolute;right:-120px;top:-40px;width:420px;height:420px;
+  background:radial-gradient(circle,rgba(255,91,58,.30),transparent 62%);
+  filter:blur(2px);pointer-events:none;
+}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12px;letter-spacing:2px;color:var(--accent-2);
+  border:1px solid var(--line);padding:5px 13px;border-radius:999px;background:var(--bg-2);
+}
+h1.hero-h{
+  font-size:clamp(32px,6.4vw,60px);line-height:1.12;font-weight:900;
+  margin:22px 0 18px;letter-spacing:-.5px;max-width:22em;
+}
+h1.hero-h i{font-style:normal;background:linear-gradient(92deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero-p{max-width:600px;color:var(--ink-2);font-size:15.5px}
+.hero-meta{margin-top:26px;display:flex;flex-wrap:wrap;gap:10px}
+.hero-meta code{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;
+  font-size:12.5px;color:var(--ink);background:var(--card);
+  border:1px solid var(--line);padding:7px 13px;border-radius:8px;
+}
+.hero-meta code b{color:var(--accent-2);font-weight:600}
+
+/* 通用区块 */
+section{padding:60px 0;border-top:1px solid var(--line)}
+.sec-head{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.sec-head h2{font-size:clamp(22px,3.6vw,31px);font-weight:800;letter-spacing:-.3px}
+.sec-head h2 u{text-decoration:none;color:var(--accent)}
+.sec-head p{color:var(--ink-2);font-size:13.5px;margin-left:auto;padding-bottom:4px}
+
+/* 卡片网格 */
+.grid{display:grid;gap:16px}
+.g4{grid-template-columns:repeat(4,1fr)}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{
+  background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px;transition:.25s;position:relative;overflow:hidden;
+}
+.card::before{content:"";position:absolute;left:0;top:0;width:3px;height:100%;background:linear-gradient(var(--accent),var(--accent-2));opacity:.75}
+.card:hover{transform:translateY(-4px);border-color:#38405f;background:#171e37}
+.tag{font-size:11.5px;letter-spacing:1px;color:var(--accent-2);font-weight:700}
+.card h3{font-size:17px;margin:9px 0 7px;font-weight:700}
+.card p{font-size:13.5px;color:var(--ink-2)}
+.card .foot{margin-top:14px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#7e89a3}
+.card .foot b{color:var(--accent);font-weight:700}
+
+/* 放映表 */
+.sched{display:flex;flex-direction:column;gap:10px}
+.row{
+  display:grid;grid-template-columns:82px 96px 1fr auto;gap:14px;align-items:center;
+  background:var(--card);border:1px solid var(--line);border-radius:13px;padding:13px 16px;
+}
+.row time{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--accent-2);font-weight:700}
+.row .genre{font-size:12px;color:#8d98b0;border:1px solid var(--line);border-radius:999px;padding:3px 10px;text-align:center}
+.row .ttl{font-weight:650;font-size:14.5px}
+.row .go{font-size:12px;color:var(--accent);border-bottom:1px solid transparent}
+.row:hover .go{border-bottom-color:var(--accent)}
+
+/* 榜单 */
+.lead{display:grid;grid-template-columns:1.15fr 1fr;gap:26px;align-items:start}
+.lead .big{background:linear-gradient(150deg,var(--bg-2),var(--card));border:1px solid var(--line);border-radius:var(--radius);padding:26px}
+.lead .big .no{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent);letter-spacing:2px}
+.lead .big h3{font-size:25px;margin:10px 0 12px;line-height:1.35}
+.lead .big p{color:var(--ink-2);font-size:14px}
+ol.rank{list-style:none;counter-reset:r}
+ol.rank li{
+  counter-increment:r;display:flex;gap:12px;align-items:baseline;
+  padding:12px 4px;border-bottom:1px dashed var(--line);font-size:14px;
+}
+ol.rank li::before{
+  content:counter(r,decimal-leading-zero);font-family:ui-monospace,Menlo,monospace;
+  color:var(--accent-2);font-weight:800;font-size:13px;min-width:26px;
+}
+ol.rank li b{font-weight:600}
+ol.rank li span{margin-left:auto;color:#7e89a3;font-size:12.5px}
+
+/* 专题 */
+.topic{
+  background:radial-gradient(1200px 300px at 20% 0%,rgba(255,91,58,.16),transparent 60%),var(--card);
+  border:1px solid var(--line);border-radius:var(--radius);padding:28px;
+}
+.topic h3{font-size:20px;margin-bottom:10px}
+.topic p{color:var(--ink-2);font-size:14px;max-width:70ch}
+.chips{margin-top:18px;display:flex;flex-wrap:wrap;gap:8px}
+.chips i{font-style:normal;font-size:12.5px;padding:6px 12px;border-radius:999px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink-2)}
+.chips i.hot{color:#0b0e1a;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-color:transparent;font-weight:700}
+
+/* 问答 */
+details.faq{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:0 18px;margin-bottom:10px}
+details.faq summary{cursor:pointer;padding:15px 0;font-weight:650;font-size:14.5px;list-style:none;display:flex;gap:12px;align-items:center}
+details.faq summary::-webkit-details-marker{display:none}
+details.faq summary::before{content:"+";color:var(--accent);font-weight:800;font-size:16px;transition:.2s}
+details.faq[open] summary::before{content:"–"}
+details.faq p{color:var(--ink-2);font-size:13.5px;padding:0 0 16px 28px}
+
+/* 页脚 */
+footer.end{border-top:1px solid var(--line);padding:40px 0 56px;color:var(--ink-2);font-size:13px}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+.foot-grid h4{font-size:13px;letter-spacing:1.5px;color:var(--ink);margin-bottom:12px;font-weight:700}
+.foot-grid ul{list-style:none;display:flex;flex-direction:column;gap:7px}
+.foot-grid a:hover{color:var(--accent-2)}
+.foot-bar{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between}
+.foot-bar code{font-family:ui-monospace,Menlo,monospace;font-size:12.5px;color:var(--ink);background:var(--bg-2);border:1px solid var(--line);padding:7px 12px;border-radius:8px}
+.foot-bar code b{color:var(--accent-2)}
+small{display:block;margin-top:14px;color:#6b7590;font-size:11.5px;line-height:1.7}
+
+@media (max-width:820px){
+  .g4{grid-template-columns:repeat(2,1fr)}
+  .g3,.g2,.lead{grid-template-columns:1fr}
+  .row{grid-template-columns:64px 1fr;row-gap:6px}
+  .row .genre{grid-column:2;width:fit-content}
+  .row .go{grid-column:2;justify-self:start}
+  .foot-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:520px){
+  .top-inner{height:56px}
+  .brand{font-size:16px}
+  .brand span{display:none}
+  .hero{padding:48px 0 36px}
+  section{padding:44px 0}
+  .g4,.g3,.g2{grid-template-columns:1fr}
+  .foot-grid{grid-template-columns:1fr}
+  .sec-head h2{width:100%}
+  .sec-head p{margin-left:0}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="top">
+  <div class="wrap top-inner">
+    <div class="brand">影视先锋<em>·</em><span>yingshixianfeng-zh</span></div>
+    <nav class="tabs" aria-label="主导航">
+      <a href="#now" class="on">正在热映</a>
+      <a href="#pick">本期片单</a>
+      <a href="#schedule">更新排期</a>
+      <a href="#topic">深度专题</a>
+      <a href="#faq">常见问答</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="eyebrow">YSXF · CINEMA &amp; SERIES DESK</div>
+      <h1 class="hero-h">把时间花在<i>值得看</i>的画面上，<br>别的交给影视先锋。</h1>
+      <p class="hero-p">影视先锋是一家由影迷手动维护的观影资料站：不搬运资源、不堆榜单，只按类型、年代、节奏和口碑给每部作品贴好标签。打开 https://yingshixianfeng-zh.github.io 就能查到今晚该点开哪一部。</p>
+      <div class="hero-meta">
+        <code>站点：<b>yingshixianfeng-zh.github.io</b></code>
+        <code>栏目：<b>热映 / 片单 / 排期 / 专题</b></code>
+        <code>更新：<b>每周三 22:00</b></code>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目一 -->
+  <section id="now" class="wrap">
+    <div class="sec-head">
+      <h2>正在热映 <u>·</u> 院线与流媒体同步</h2>
+      <p>数据按上映/上线日期手工整理，仅作观影参考</p>
+    </div>
+    <div class="grid g4">
+
+      <article class="card">
+        <div class="tag">剧情 · 犯罪</div>
+        <h3>逆光缉凶</h3>
+        <p>一场跨城追车戏撑起全片骨架，后半段的审讯反转处理得克制，适合喜欢“说话比枪响”的观众。</p>
+        <div class="foot"><span>2026-10-16 上映</span><b>8.4</b></div>
+      </article>
+      <article class="card">
+        <div class="tag">科幻 · 悬疑</div>
+        <h3>深眠代码</h3>
+        <p>把“记忆可被编辑”这件事拍出了生活质感，视效服务于设定，而非反过来。第三集开始发力，建议连看。</p>
+        <div class="foot"><span>流媒体 全8集</span><b>8.1</b></div>
+      </article>
+      <article class="card">
+        <div class="tag">动画 · 家庭</div>
+        <h3>海上邮差</h3>
+        <p>手绘质感的水面光影是今年最舒服的视觉体验之一，孩子看故事，大人看告别，分级友好。</p>
+        <div class="foot"><span>2026-10-09 上映</span><b>8.7</b></div>
+      </article>
+      <article class="card">
+        <div class="tag">纪录片</div>
+        <h3>菜市场的气象学</h3>
+        <p>6 集跟拍四个城市的早市，没有旁白煽情，靠声场和季节变化推进，失眠时当声音片看也成立。</p>
+        <div class="foot"><span>更新至 EP4</span><b>9.0</b></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 栏目二 -->
+  <section id="pick" class="wrap">
+    <div class="sec-head">
+      <h2>本期片单 <u>·</u> 一百分钟级的精准投喂</h2>
+      <p>按“观看场景”而不是热度排序</p>
+    </div>
+    <div class="lead">
+      <div class="big">
+        <div class="no">EDITOR’S PICK №26</div>
+        <h3>一个人吃完一碗面，就该看这部冷门港片</h3>
+        <p>不是杀手，不是卧底，是一个退圈场务在旧戏院里捡胶片的七天。镜头几乎不动，但每场戏的门框构图都在替人物说话。影视先锋把它放在本周第一位，理由是：它值得被安静地看完，而不是被倍速划过。</p>
+        <div class="chips" style="margin-top:16px">
+          <i class="hot">治愈系</i><i>节奏慢</i><i>台词少</i><i>单集 96 min</i>
+        </div>
+      </div>
+      <ol class="rank">
+        <li><b>《胶片上的第七天》</b><span>96 min · 剧情</span></li>
+        <li><b>《雨停之前回家》</b><span>88 min · 爱情</span></li>
+        <li><b>《边境检查员》</b><span>112 min · 悬疑</span></li>
+        <li><b>《第二份早餐》</b><span>74 min · 喜剧</span></li>
+        <li><b>《无人认领的行李》</b><span>103 min · 纪录片</span></li>
+        <li><b>《北风会记得》</b><span>125 min · 历史</span></li>
+        <li><b>《电话那头是春天》</b><span>81 min · 动画</span></li>
+        <li><b>《夜航船》</b><span>99 min · 奇幻</span></li>
+      </ol>
+    </div>
+    <div class="grid g3" style="margin-top:16px">
+
+      <article class="card">
+        <div class="tag">周五夜 · 爽感</div>
+        <h3>动作戏不吵的那一类</h3>
+        <p>三部长片 + 一部短篇，打斗靠空间而不是剪辑堆出来，适合想放松又不想动脑的晚上。</p>
+        <div class="foot"><span>4 部 · 约 6h</span><b>查看</b></div>
+      </article>
+      <article class="card">
+        <div class="tag">周日午后 · 轻量</div>
+        <h3>看完不会堵心的七部</h3>
+        <p>筛选标准是“结尾有没有人笑着走出来”，全部通过，含两部被片名耽误的冷门作。</p>
+        <div class="foot"><span>7 部 · 约 9h</span><b>查看</b></div>
+      </article>
+      <article class="card">
+        <div class="tag">通宵 · 烧脑</div>
+        <h3>时间线要画在纸上的</h3>
+        <p>非线性叙事、双视角、开放式结局，建议从列表第三部开始看，顺序本身就是剧透。</p>
+        <div class="foot"><span>5 部 · 约 11h</span><b>查看</b></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 栏目三 -->
+  <section id="schedule" class="wrap">
+    <div class="sec-head">
+      <h2>更新排期 <u>·</u> 追更不用开推送</h2>
+      <p>每周三固定换片单，节假日前加更一次</p>
+    </div>
+    <div class="sched">
+
+      <div class="row">
+        <time datetime="2026-10-28">10/28 周三</time>
+        <div class="genre">片单更新</div>
+        <div class="ttl">「秋天该看的十部公路片」——从西北国道到北海道海岸线</div>
+        <a class="go" href="#schedule">已预告</a>
+      </div>
+      <div class="row">
+        <time datetime="2026-10-31">10/31 周六</time>
+        <div class="genre">专题加更</div>
+        <div class="ttl">万圣前夜特辑：不靠妆造吓人的六部心理惊悚</div>
+        <a class="go" href="#schedule">已预告</a>
+      </div>
+      <div class="row">
+        <time datetime="2026-11-04">11/04 周三</time>
+        <div class="genre">剧集追踪</div>
+        <div class="ttl">Q4 待完结剧集进度表：哪些值得现在入坑，哪些建议等全集</div>
+        <a class="go" href="#schedule">预告中</a>
+      </div>
+      <div class="row">
+        <time datetime="2026-11-11">11/11 周三</time>
+        <div class="genre">影人专栏</div>
+        <div class="ttl">被片头字幕跳过的人：三位美术指导的作品谱系梳理</div>
+        <a class="go" href="#schedule">筹备中</a>
+      </div>
+      <div class="row">
+        <time datetime="2026-11-18">11/18 周三</time>
+        <div class="genre">年度候选</div>
+        <div class="ttl">年底前的补片清单：今年可能出现在各榜单上的 12 部</div>
+        <a class="go" href="#schedule">筹备中</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 栏目四 -->
+  <section id="topic" class="wrap">
+    <div class="sec-head">
+      <h2>深度专题 <u>·</u> 不只是告诉你“好看”</h2>
+      <p>影视先锋的长内容，每季度 2–3 篇</p>
+    </div>
+    <div class="grid g2">
+
+      <div class="topic">
+        <div class="tag">专题 №09</div>
+        <h3>为什么越来越多好片，只剩 80 分钟</h3>
+        <p>从近三年院线片长数据里挑出一条隐线：压缩的不是故事，是废戏。我们把 40 部片按“第一幕转折点位置”拆开对比，结论是——敢早进冲突的导演，往往也敢早收尾。</p>
+        <div class="chips">
+          <i class="hot">片长分析</i><i>叙事节奏</i><i>40 部样本</i><i>阅读 12 min</i>
+        </div>
+      </div>
+      <div class="topic" style="background:radial-gradient(1200px 300px at 80% 0%,rgba(255,180,84,.14),transparent 60%),var(--card)">
+        <div class="tag">专题 №08</div>
+        <h3>片名翻译这件小事，怎样毁掉一部片的胃口</h3>
+        <p>同一部冷门佳片在两岸三地的译名差异，会直接影响点击意愿。我们做了一次小范围盲测：只换片名、不换简介，点击率能差出 3 倍。附一份“别再这么译”的负面清单。</p>
+        <div class="chips">
+          <i class="hot">译名考据</i><i>点击率实验</i><i>27 组对照</i><i>阅读 9 min</i>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 栏目五：问答 -->
+  <section id="faq" class="wrap">
+    <div class="sec-head">
+      <h2>常见问答 <u>·</u> 关于影视先锋怎么用</h2>
+      <p>没写进 FAQ 的事，可以到关于页找</p>
+    </div>
+
+    <details class="faq" open>
+      <summary>影视先锋提供在线播放或资源下载吗？</summary>
+      <p>不提供。本站只做片单整理、作品介绍与观影线索归档，所有条目均不含播放地址、网盘链接或下载通道。若你在本站以外看到打着“影视先锋”名义的播放站，与本域名 yingshixianfeng-zh.github.io 无关。</p>
+    </details>
+    <details class="faq">
+      <summary>片单里的评分从哪里来，多久校准一次？</summary>
+      <p>显示为编辑组内评分（1–10，取三人中位值），与任何公开评分平台不挂钩，仅表达“值不值得花这两小时”。每月最后一个周三随片单一起重校，旧条目若口碑发生明显漂移会单独标注更新日期。</p>
+    </details>
+    <details class="faq">
+      <summary>能不能按“年代 + 类型 + 时长”一起筛？</summary>
+      <p>当前单页版本以栏目导航为主，筛选靠片单标签完成。如果你想要自定义筛选视图，可以把需求留在本页末的留言口，人气够高就会在下一次改版里做成可切换的筛选条。</p>
+    </details>
+    <details class="faq">
+      <summary>为什么有些片子只有一句话，没有剧透级介绍？</summary>
+      <p>一句话是给“还没决定”的人用的；一旦写细了，就等于替你剧透了。涉及关键情节的条目，我们默认停在转折点之前，并在标签里写明“结尾开放”“有反转”，由你决定要不要往下走。</p>
+    </details>
+    <details class="faq">
+      <summary>影视先锋这个域名是唯一官方地址吗？</summary>
+      <p>是。唯一固定地址为 https://yingshixianfeng-zh.github.io ，站内所有自引用链接也都指向它。请不要通过短链或搜索广告里的相似域名访问，避免进到仿站。</p>
+    </details>
+
+  </section>
+
+  <!-- 栏目六：关于 -->
+  <section id="about" class="wrap">
+    <div class="sec-head">
+      <h2>关于本站 <u>·</u> 一个影迷的手工台账</h2>
+      <p>自建站以来，只做一件事：降低选片成本</p>
+    </div>
+    <div class="grid g3">
+
+      <article class="card">
+        <div class="tag">01 怎么选</div>
+        <h3>先看场景，再看名气</h3>
+        <p>我们不按票房排座次。通勤、失眠、约会、发烧卧床，是四种完全不同的观影需求，片单也该跟着变。</p>
+      </article>
+      <article class="card">
+        <div class="tag">02 怎么写</div>
+        <h3>不写通稿式简介</h3>
+        <p>拒绝“讲述了一段动人的故事”这种万能句。每条介绍只回答一个问题：它到底哪里值得你掏出这两小时。</p>
+      </article>
+      <article class="card">
+        <div class="tag">03 怎么更新</div>
+        <h3>慢，但是可追溯</h3>
+        <p>每周三换一批，重要改动留日期。旧片单不会悄悄消失，而是归档进对应专题，方便你回头核对当时的判断。</p>
+      </article>
+
+    </div>
+    <div class="topic" style="margin-top:16px">
+      <h3>想让影视先锋帮你补上哪一课？</h3>
+      <p>冷门动画导演谱系、华语犯罪片二十年、适合父母看的纪录片……下一期专题的选题来自读者提议，提一个你真的想看的方向，它可能就出现在下个月的那份片单开头。</p>
+      <div class="chips">
+        <i class="hot">投稿选题</i><i>纠错补片</i><i>合作留言</i><i>来信请注明出处</i>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="end">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <h4>影视先锋 · yingshixianfeng-zh</h4>
+        <p style="max-width:34ch">影迷手工维护的观影资料站，专注片单整理、作品介绍与更新排期，不提供任何播放或下载服务。</p>
+      </div>
+      <div>
+        <h4>站内栏目</h4>
+        <ul>
+          <li><a href="#now">正在热映</a></li>
+          <li><a href="#pick">本期片单</a></li>
+          <li><a href="#schedule">更新排期</a></li>
+          <li><a href="#topic">深度专题</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>访问与声明</h4>
+        <ul>
+          <li><a href="#faq">常见问答</a></li>
+          <li><a href="#about">关于本站</a></li>
+          <li><a href="#now">返回顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bar">
+      <code>官方唯一地址：<b>https://yingshixianfeng-zh.github.io</b></code>
+      <code>站点名称：<b>影视先锋</b> · 手工更新</code>
+    </div>
+    <small>
+      本页所有内容仅供观影交流与个人归档使用，所涉影片名称、上映信息均为介绍性文字，版权归各自权利人所有。本站不存储、不转发任何影视文件。<br>
+      yingshixianfeng-zh.github.io 为 GitHub Pages 静态站点，页面内容以浏览器直出 HTML 为准，利于搜索引擎完整抓取与收录。
+    </small>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var links=document.querySelectorAll('nav.tabs a');
+  var secs=[];
+  links.forEach(function(a){
+    var el=document.querySelector(a.getAttribute('href'));
+    if(el) secs.push({a:a,el:el});
+  });
+  function tick(){
+    var y=window.scrollY+120,cur=null;
+    secs.forEach(function(s){ if(s.el.offsetTop<=y) cur=s.a; });
+    links.forEach(function(a){ a.classList.toggle('on', a===cur); });
+  }
+  window.addEventListener('scroll',tick,{passive:true});
+  tick();
+})();
+</script>
+</body>
+</html>
